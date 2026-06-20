@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.omatheus</groupId>
+    <artifactId>dsa-java</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>DSA Java</name>
+    <description>Data Structures and Algorithms practice in Java - Pattern-based approach</description>
+
+    <properties>
+        <java.version>25</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.11.4</junit.version>
+        <maven-surefire.version>3.5.2</maven-surefire.version>
+    </properties>
+
+    <modules>
+        <!-- Phase 1: Fundamentals -->
+        <module>patterns/01-two-pointers</module>
+        <module>patterns/02-sliding-window</module>
+        <module>patterns/03-prefix-sum</module>
+        <module>patterns/04-hashing</module>
+
+        <!-- Phase 2: Linear Structures -->
+        <module>patterns/05-stacks</module>
+        <module>patterns/06-linked-lists</module>
+
+        <!-- Phase 3: Search & Sort -->
+        <module>patterns/07-binary-search</module>
+
+        <!-- Phase 4: Hierarchical & Networks -->
+        <module>patterns/08-trees</module>
+        <module>patterns/09-heaps</module>
+        <module>patterns/10-graphs</module>
+
+        <!-- Phase 5: Advanced Algorithms -->
+        <module>patterns/11-backtracking</module>
+        <module>patterns/12-dynamic-programming</module>
+        <module>patterns/13-greedy</module>
+        <module>patterns/14-intervals</module>
+
+        <!-- Phase 6: Specialized -->
+        <module>patterns/15-tries</module>
+        <module>patterns/16-bit-manipulation</module>
+        <module>patterns/17-math</module>
+        <module>patterns/18-union-find</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,7 @@
+# Java LSP / Eclipse
+.classpath
+.project
+.settings/
+
+# lazygit
+lazygit
