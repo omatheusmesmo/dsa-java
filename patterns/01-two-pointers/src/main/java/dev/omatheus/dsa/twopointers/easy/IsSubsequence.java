@@ -3,21 +3,23 @@ package dev.omatheus.dsa.twopointers.easy;
 /**
  * <a href="https://leetcode.com/problems/is-subsequence/">392. Is Subsequence</a> (Easy)
  *
- * <p>Given two strings {@code s} and {@code t}, return true if {@code s} is a subsequence of
- * {@code t}, or false otherwise. A subsequence is a sequence that can be derived from another
- * sequence by deleting some or no elements without changing the order of the remaining elements.</p>
+ * <p>Given two strings {@code s} and {@code t}, return true if {@code s} is a subsequence of {@code
+ * t}, or false otherwise. A subsequence is a sequence that can be derived from another sequence by
+ * deleting some or no elements without changing the order of the remaining elements.
  *
- * <p><strong>Example:</strong></p>
+ * <p><strong>Example:</strong>
+ *
  * <pre>
  * Input: s = "abc", t = "ahbgdc"
  * Output: true
  * </pre>
  *
- * <p><strong>Constraints:</strong></p>
+ * <p><strong>Constraints:</strong>
+ *
  * <ul>
- *   <li>0 <= s.length <= 100</li>
- *   <li>0 <= t.length <= 10^4</li>
- *   <li>s and t consist only of lowercase English letters</li>
+ *   <li>0 <= s.length <= 100
+ *   <li>0 <= t.length <= 10^4
+ *   <li>s and t consist only of lowercase English letters
  * </ul>
  *
  * @see dev.omatheus.dsa.twopointers.easy.IsSubsequenceTest
@@ -32,6 +34,13 @@ public class IsSubsequence {
      * @return true if s is a subsequence of t, false otherwise
      */
     public boolean isSubsequence(String s, String t) {
-        throw new UnsupportedOperationException("Solve this problem!");
+        int i = 0, j = 0;
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+            j++;
+        }
+        return i == s.length();
     }
 }
