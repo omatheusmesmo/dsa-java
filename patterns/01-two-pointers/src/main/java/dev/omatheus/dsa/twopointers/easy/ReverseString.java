@@ -4,18 +4,20 @@ package dev.omatheus.dsa.twopointers.easy;
  * <a href="https://leetcode.com/problems/reverse-string/">344. Reverse String</a> (Easy)
  *
  * <p>Write a function that reverses a string. The input string is given as an array of characters
- * {@code s}. You must do this in-place by modifying the input array.</p>
+ * {@code s}. You must do this in-place by modifying the input array.
  *
- * <p><strong>Example:</strong></p>
+ * <p><strong>Example:</strong>
+ *
  * <pre>
  * Input: s = ["h","e","l","l","o"]
  * Output: ["o","l","l","e","h"]
  * </pre>
  *
- * <p><strong>Constraints:</strong></p>
+ * <p><strong>Constraints:</strong>
+ *
  * <ul>
- *   <li>1 <= s.length <= 10^5</li>
- *   <li>s[i] is a printable ascii character</li>
+ *   <li>1 <= s.length <= 10^5
+ *   <li>s[i] is a printable ascii character
  * </ul>
  *
  * @see dev.omatheus.dsa.twopointers.easy.ReverseStringTest
@@ -28,6 +30,14 @@ public class ReverseString {
      * @param s the character array to reverse
      */
     public void reverseString(char[] s) {
-        throw new UnsupportedOperationException("Solve this problem!");
+        int l = 0, r = s.length - 1;
+
+        while (l < r) {
+            char temp = s[l];
+            s[l] = s[r];
+            s[r] = temp;
+            l++;
+            r--;
+        }
     }
 }
